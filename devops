@@ -1,0 +1,8 @@
+### How to make environment variables available to cron jobs
+
+> 0 5 * * * . /home/darko/project/.vars.env; /home/darko/project/command_to_run.py
+
+The . is quivalent the source command. Anytime this cron is run, it will set all environment variables defined inside .vars.env before executing the command.
+It's good practice to keep this hidden and also to add it to your gitignore. Also good practice to keep the same name (.vars.env) across all your projects.
+
+source: https://stackoverflow.com/questions/2229825/where-can-i-set-environment-variables-that-crontab-will-use
